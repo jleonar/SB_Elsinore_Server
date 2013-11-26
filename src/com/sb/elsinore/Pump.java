@@ -15,7 +15,7 @@ public class Pump {
 	public String name;
 	public OutPin output = null;
 	public String pName = null;
-	public boolean virtualDevice=false;
+	public boolean virtualDevice=true;
 	public ArrayList virtualDeviceAttr=null;
 	
 	public Pump(String name, String pinName) throws InvalidGPIOException {
@@ -48,14 +48,18 @@ public class Pump {
 	}
 	
 	public void turnOn() {
-		if (virtualDevice)
-			virtualDeviceAttr.set(3, "1");
+		if (virtualDevice){
+			virtualDeviceAttr.set(2, "1");
+			return;
+		}
 		output.setValue(true);
 	}
 	
 	public void turnOff() {
-		if (virtualDevice)
-			virtualDeviceAttr.set(3, "0");
+		if (virtualDevice){
+			virtualDeviceAttr.set(2, "0");
+			return;
+		}
 		output.setValue(false);
 	}
 
