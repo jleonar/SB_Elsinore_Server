@@ -15,11 +15,13 @@ public class Pump {
 	public String name;
 	public OutPin output = null;
 	public String pName = null;
-	public boolean virtualDevice=true;
+	public boolean virtualDevice = false;
 	public ArrayList virtualDeviceAttr=null;
 	
 	public Pump(String name, String pinName) throws InvalidGPIOException {
 		this.name = name;
+		if(System.getProperty("virtualPumps") != null)
+			virtualDevice=true;
 		if(virtualDevice){
 			virtualDeviceAttr=new ArrayList();
 			virtualDeviceAttr.add(name);

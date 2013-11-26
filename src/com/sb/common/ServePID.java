@@ -207,7 +207,7 @@ public class ServePID {
 		                    "<td id=\"" + device + "-pinput\">" + lineSep +
 		                    "	<input class='inputBox p' name=\"" + device + "-p\"  maxlength = \"6\" size =\"6\" value=\"\" style=\"text-align: left;\"/>" +
 		                    "</td>" + lineSep +
-		                    "<td id='"+ device + "-unitP'>secs#176<div id='tempUnit'>F</div></td>"+ 
+		                    "<td id='"+ device + "-unitP'>secs</td>"+ 
 		                "</tr>" + lineSep +
 		                
 		                // I
