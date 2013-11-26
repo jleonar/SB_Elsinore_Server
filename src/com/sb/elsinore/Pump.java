@@ -11,11 +11,13 @@ public class Pump {
 	
 	public String name;
 	public OutPin output = null;
+	public String pName = null;
 	
 	public Pump(String name, String pinName) throws InvalidGPIOException {
 		this.name = name;
 		try {
 			output = new OutPin(pinName);
+			pName=pinName;
 		} catch (InvalidGPIOException e) {
 			// TODO Auto-generated catch block
 			throw e;
@@ -44,6 +46,6 @@ public class Pump {
 
 	public String getGPIO() {
 		// TODO Auto-generated method stub
-		return output.getGPIOName();
+		return pName;
 	}
 }
